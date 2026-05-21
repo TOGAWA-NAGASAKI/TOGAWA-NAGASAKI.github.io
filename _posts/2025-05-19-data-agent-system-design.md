@@ -93,7 +93,7 @@ json
   }
 ]
  
- 
+ ```
 
 Note: I used the free API of GLM-4.7-Flash for reward scoring, which helped evaluate trajectory quality without manual labeling.
 
@@ -151,7 +151,7 @@ trainer = TransformersTrainer(
 )
 trainer.fit()
  
- 
+```
 
 Since my laptop had no GPU, I ran a small debugging loop on CPU (only 100 steps) to verify correctness, then submitted the full training to Google Colab with a free T4 GPU. The training took approximately 2 hours for 3 epochs.
 ## Task 4: Deployment and Demo Website
@@ -165,7 +165,7 @@ Requirement:
 Implementation
 
 I used Gradio to build a simple web interface:
-python
+```python
 import gradio as gr
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
@@ -188,7 +188,7 @@ iface = gr.Interface(
 )
 iface.launch()
  
- 
+ ```
 
 To better support data analysis, I extended the UI with:
 
